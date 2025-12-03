@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This is my personal Portfolio as a Developer">
+    <meta name="description" content="This is my personal Developer Portfolio">
     <title>Tamer Ghazi Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -13,34 +13,34 @@
 <body>
     <header class="portfolio_header">
         <div class="header_text">
-            <a href="#home"><img class="img_nav" src="./assets/bg-TG.png"></a>
+            <a href="#home"><img class="img_nav" src="./assets/bg-Tg.png" alt="Logo"></a>
         </div>
-         <i class="fa-solid fa-list responsive_navigation"></i>
+        <i class="fa-solid fa-list responsive_navigation"></i>
         <nav class="navigation">
             <ul class="navigation_list">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#aboutme">About me</a></li>
+                <li><a href="#aboutme">About Me</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="contactme">Contact Me</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li><a href="Deutsch.html">Deutsch</a></li>
             </ul>
         </nav>
-        </div>
     </header>
+
     <main class="container">
         <div class="content">
             <div class="main_image">
                 <img src="./assets/Profilepicture.png" alt="Tamer Ghazi Web Developer">
             </div>
             <div class="main_text">
-                <h2 class="main_title">Hello There! My name is Tamer &#128075;</h2>
-                <h3>I am a Web Developer &#128187; </h3>
-                <p class="main_paragraph">I am a curious software developer based in Hamburg with 5 Years experience in
-                    web
-                    development.
+                <h2 class="main_title">Hello! My Name is Tamer &#128075; Experienced Developer with a Learner's Mindset.</h2>
+                <h3>Full Stack Developer based in Hamburg &#128187;</h3>
+                <p class="main_paragraph">
+                    I bring 5 years of professional experience to the table, yet I believe the best developers never stop learning.
+                    I am deeply committed to mastering Full Stack technologies, constantly challenging myself to write cleaner code and build better solutions every day.
                 </p>
             </div>
-        </div>
+        </div> 
         <section class="main_content" id="aboutme">
             <div class="card experience">
                 <h3>Experience</h3>
@@ -67,39 +67,36 @@
             </div>
         </section>
 
-        <section class="contact">
-            <h2 class="contact_title">Get in touch </h2>
+        <section class="contact" id="contact">
+            <h2 class="contact_title">Get in touch</h2>
             <div class="socialmedia_icons">
                 <a href="mailto:tamerghazi@hotmail.com"><i class="fa-solid fa-at icon contact_icon"></i></a>
-                <a href="https://www.linkedin.com/in/tamerghazi/"><i
-                        class="fa-brands fa-linkedin icon contact_icon"></i></a>
-                <a href="https://www.xing.com/profile/Tamer_Ghazi/web_profiles?nwt_nav=profile&expandNeffi=true"><i
-                        class="fa-brands fa-square-xing icon contact_icon"></i></a>
+                <a href="https://www.linkedin.com/in/tamerghazi/"><i class="fa-brands fa-linkedin icon contact_icon"></i></a>
+                <a href="https://www.xing.com/profile/Tamer_Ghazi/web_profiles?nwt_nav=profile&expandNeffi=true"><i class="fa-brands fa-square-xing icon contact_icon"></i></a>
                 <a href="https://github.com/Tamergh96"><i class="fa-brands fa-github icon contact_icon"></i></a>
                 <a href="./assets/Lebenslauf_Ghazi.pdf" download class="cv_download"><i class="fa-solid fa-download icon contact_icon"></i></a>
             </div>
         </section>
-        </main>
-        <footer class="portfolio_footer">
-            <p>&copy;Tamer Ghazi-2025</p>
-        </footer>
+    </main>
 
-        <script>
-                  const burgerMenu = document.querySelector('.responsive_navigation');
+    <footer class="portfolio_footer">
+        <p>&copy; Tamer Ghazi - 2025</p>
+    </footer>
+
+    <script>
+        const burgerMenu = document.querySelector('.responsive_navigation');
         const navList = document.querySelector('.navigation_list');
 
-        // Add click event to toggle the menu
         burgerMenu.addEventListener('click', () => {
-        navList.classList.toggle('active');
+            navList.classList.toggle('active');
         });
 
-        // Optional: Close menu when a link is clicked
         document.querySelectorAll('.navigation_list li a').forEach(link => {
             link.addEventListener('click', () => {
-            navList.classList.remove('active');
+                navList.classList.remove('active');
+            });
         });
-        });
-        </script>
+    </script>
 </body>
 
 </html>
