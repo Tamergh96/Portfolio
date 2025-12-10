@@ -1,51 +1,644 @@
+/*
+|--------------------------------------------------------------------------
+| 1. CSS VARIABLES (Design System)
+|--------------------------------------------------------------------------
+| Defines the core theme colors, sizing, and style properties.
+*/
+
+:root {
+    /* --- Color Palette --- */
+    --bg-dark: #0f172a; 	 	 /* Deep blue/black for depth */
+    --bg-light: #1e293b; 	 	 /* Lighter blue for gradient */
+    --accent-color: #38bdf8; 	 	 /* Sky Blue for highlights (glows) */
+    --text-main: #f8fafc; 	 	 /* Bright white for main text */
+    --text-muted: #cbd5e1; 	 	 /* Softer white for paragraphs */
+    
+    /* --- Modern Card Style (Glassmorphism) --- */
+    --card-bg: rgba(255, 255, 255, 0.03); 	 /* Translucent background */
+    --card-border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+    --glass-blur: blur(16px); 	 	 	 	 /* Blurs the background behind cards */
+    
+    /* --- Layout & Typography Variables --- */
+    --container-width: 120rem; 
+    --header-height: 8rem;
+    --font-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    --border-radius: 1.5rem;
+}
+
+/*
+|--------------------------------------------------------------------------
+| 2. BASE STYLES & RESETS
+|--------------------------------------------------------------------------
+| Universal resets, typography settings, and main body styling.
+*/
+
+html {
+    /* Base font-size for rem units: 1rem = 10px (62.5% of 16px default) */
+    font-size: 62.5%; 
+    scroll-behavior: smooth;
+}
+
 * {
-    border: 0;
     margin: 0;
+    padding: 0;
+    /* Forces padding and borders to be included in the element's total width and height */
+    box-sizing: border-box;
 }
 
 body {
-    background-color: lightgray ;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    text-align: justify;
+    font-family: var(--font-main);
+    color: var(--text-main);
+    font-size: 1.6rem;
+    
+    /* RADIAL GRADIENT: Creates a light source effect */
+    background: radial-gradient(circle at top left, var(--bg-light), var(--bg-dark));
+    background-attachment: fixed; /* Keeps gradient still while scrolling */
+    
+    /* Full-page layout setup */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-img{
-    margin-left: 40%;
-    margin-right: 40%;
-    margin-top: 5px;
-    width: 20%;
+/* Base class for blue highlights */
+.highlight {
+    color: var(--accent-color);
+}
+
+/*
+|--------------------------------------------------------------------------
+| 3. HEADER & NAVIGATION
+|--------------------------------------------------------------------------
+| Styling for the sticky header, logo, and desktop navigation links.
+*/
+
+.portfolio_header {
+    /* Glass Header Effect */
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+
+    /* Layout */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+    padding: 0 5%;
+}
+
+/* LOGO FIX: Makes the square image a glowing circle */
+.img_nav {
+    width: 7rem; 
+    height: 7rem;
     object-fit: cover;
+    border-radius: 50%; 
+    border: 2px solid var(--accent-color); 
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.5); 
+    transition: transform 0.5s ease;
 }
 
-h1,h2 {
-    margin-bottom: 10px;
+.img_nav:hover {
+    transform: rotate(360deg); /* Spins on hover */
+}
+
+.navigation_list li {
+    display: inline-block;
+    padding: 0 2rem;
+    font-size: 1.7rem;
+}
+
+/* FOCUS-VISIBLE ADDED */
+.navigation_list li a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navigation_list li a:hover,
+.navigation_list li a:focus-visible { 
+    color: var(--accent-color);
+}
+
+/*
+|--------------------------------------------------------------------------
+| 4. MAIN LAYOUT & HERO SECTION
+|--------------------------------------------------------------------------
+| Container for the main content, introductory hero area, and CTA buttons.
+*/
+
+main.container {
+    flex: 1; /* Allows container to grow and fill remaining vertical space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    /* Spacing and width */
+    gap: 8rem;
+    padding: 5rem 2rem;
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto; /* Center the container */
+}
+
+/* Hero Content Wrapper */
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 6rem;
+}
+
+.main_image img {
+    width: 32rem;
+    height: 32rem;
+    object-fit: cover;
+    border-radius: 50%;
+    /* Profile Picture Glow */
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.15); 
+    border: 4px solid rgba(255,255,255,0.1);
+}
+
+.main_text {
+    width: 50%;
+    min-width: 30rem;
+    text-align: left;
+}
+
+.main_title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.main_text h3 {
+    font-size: 2.2rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.main_paragraph {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+}
+
+/* CTA BUTTON STYLES */
+.cta_buttons {
+    margin-top: 3rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap; /* responsive stacking */
+}
+
+.btn {
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 600;
+    padding: 1.2rem 3rem;
+    border-radius: 0.8rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
     text-align: center;
 }
-.text, header, .socials{ 
+
+.primary_btn {
+    background-color: var(--accent-color);
+    color: var(--bg-dark);
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.5); /* Neon glow effect */
+}
+
+.primary_btn:hover {
+    background-color: #38bdf8e0; /* slight darker shade */
+    box-shadow: 0 0 25px var(--accent-color);
+}
+
+.secondary_btn {
+    background: transparent;
+    color: var(--text-main);
+    border: 2px solid var(--text-muted);
+}
+
+.secondary_btn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| 5. CARDS & SECTIONS (Glassmorphism)
+|--------------------------------------------------------------------------
+| Styling for the informational cards, experience list, and technology grid.
+*/
+
+.main_content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem;
+    width: 100%;
+}
+
+.card {
+    /* Glassmorphism Styles */
+    background: var(--card-bg);
+    border: var(--card-border);
+    backdrop-filter: var(--glass-blur);
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+    
+    /* Layout and Spacing */
+    padding: 4rem;
+    border-radius: var(--border-radius);
+    flex: 1;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    /* Interaction */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Floating effect */
+    border-color: var(--accent-color);
+}
+
+.card h3 {
+    font-size: 2.4rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+/* Experience List */
+.experience ul {
+    list-style: none;
+    width: 100%;
+}
+
+.experience li {
+    font-size: 2rem; /* Big readable text */
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    line-height: 1.5;
+}
+
+.experience li:last-child {
+    border-bottom: none;
+}
+
+.experience li strong {
+    color: var(--text-main);
+    display: inline-block;
+    min-width: 60px;
+}
+
+/* SOFT SKILLS LIST */
+.soft_skills_list {
+    list-style: none;
+    width: 100%;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.soft_skills_list li {
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    color: var(--text-muted);
+}
+
+.soft_skills_list li strong {
+    color: var(--text-main); /* Highlight headings within the list */
+    margin-right: 0.5rem;
+}
+
+.soft_skills_list li i {
+    color: var(--accent-color);
+    font-size: 2.2rem;
+    margin-right: 1.5rem;
+}
+
+
+/* Technologies Grid */
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem; /* Reduced gap for better fit with text */
+    justify-items: center;
+    padding-top: 1rem;
+}
+
+/* Updated Tech Item Styling */
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.tech-item span {
+    margin-top: 0.5rem; 
+    font-size: 1.4rem; 
+    color: var(--text-muted);
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.tech-item:hover span {
+    color: var(--accent-color);
+}
+
+.icon {
+    font-size: 6rem; 
+    color: var(--text-muted);
+    transition: all 0.3s;
+}
+
+.icon:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px var(--accent-color));
+}
+
+/*
+|--------------------------------------------------------------------------
+| 6. PROJECTS SECTION
+|--------------------------------------------------------------------------
+| Styling for the project display area and new details section.
+*/
+
+.projects {
+    width: 100%;
+    text-align: center;
+    padding-top: 4rem;
+}
+
+.projects h2 {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    color: var(--text-main);
+}
+
+.projects_photos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+}
+
+.projects_photos .card {
+    padding: 0; /* Remove padding for flush image/details */
+    overflow: hidden;
+    min-width: 300px;
+    max-width: 500px;
+    display: flex; /* Ensure image and info stack */
+    flex-direction: column;
+}
+
+.projects_photos .card img {
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.projects_photos .card:hover img {
+    transform: scale(1.05);
+}
+
+/* NEW: PROJECT INFO STYLES */
+.project_info {
+    padding: 2rem 3rem;
     text-align: left;
-    margin-bottom: 20px;
-    padding-left: 10px;
+    background-color: var(--bg-dark); 
+    border-top: 1px solid rgba(255,255,255,0.05);
+    flex-grow: 1; /* Ensures info area fills remaining card height */
 }
 
-.socials {
-    margin-top: 3%;
-    margin-left: 40%;
+.project_info h4 {
+    font-size: 2.2rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
+.project_info p {
+    font-size: 1.6rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
 }
 
-a:hover {
-    color: blue;
-    font-size: 20px;
+.tech_stack {
+    margin-top: 1.5rem;
+    font-weight: 500;
 }
 
-.footer {
-    border: 1px solid black;
-    background-color: black;
-    color: white;
-    margin-top: 17%;
+.project_links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* Adjust button size for project cards */
+.btn-small {
+    padding: 0.8rem 2rem;
+    font-size: 1.6rem;
+    flex-grow: 1; /* Makes buttons share the width */
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| 7. CONTACT & FOOTER
+|--------------------------------------------------------------------------
+| Styling for the contact links and site footer.
+*/
+
+.contact {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.contact_title {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    color: var(--text-main);
+}
+
+.socialmedia_icons {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+/* FOCUS-VISIBLE ADDED */
+.contact_icon {
+    color: var(--text-muted);
+    font-size: 3.5rem;
+    transition: all 0.3s;
+}
+
+.contact_icon:hover,
+.contact_icon:focus-visible { 
+    color: var(--accent-color);
+    transform: translateY(-5px);
+}
+
+.portfolio_footer {
+    text-align: center;
+    padding: 3rem 0;
+    color: var(--text-muted);
+    font-size: 1.4rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+/*
+|--------------------------------------------------------------------------
+| 8. MOBILE RESPONSIVENESS
+|--------------------------------------------------------------------------
+| Media query to adjust layout for smaller screens (max-width: 768px).
+*/
+
+/* Hidden by default on desktop, shown on mobile */
+.responsive_navigation { 
+    display: none; 
+}
+
+@media only screen and (max-width: 768px) {
+    /* 1. Main Layout & Spacing */
+    main.container {
+        padding: 2rem 1.5rem; 
+        gap: 4rem; 
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+    
+    .main_text {
+        width: 100%;
+        text-align: center;
+        min-width: auto;
+        /* Centering for CTA buttons */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta_buttons {
+        justify-content: center;
+    }
+
+    .main_title {
+        font-size: 2.8rem;
+    }
+
+    .main_image img {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .main_content {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    
+    .card {
+        width: 100%;
+        min-width: auto;
+        padding: 2.5rem;
+    }
+
+    .icon-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 3rem;
+    }
+    
+    .icon {
+        font-size: 5rem;
+    }
+
+    .projects_photos {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    
+    .projects_photos .card {
+        max-width: 100%;
+    }
+
+    .projects_photos .card img {
+        height: 20rem; /* Smaller height on mobile devices */
+    }
+    
+    /* Project links stacking on tiny screens */
+    .project_links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .btn-small {
+        width: 100%;
+    }
+
+    .portfolio_header {
+        padding: 0 2rem;
+        position: relative;
+    }
+
+    .responsive_navigation {
+        display: block;
+        /* Position burger icon on the right */
+        position: absolute; 
+        right: 2rem; 
+        top: 50%; 
+        transform: translateY(-50%); /* Perfect center alignment */
+        
+        font-size: 2.5rem;
+        cursor: pointer;
+        color: var(--text-main);
+    }
+
+    /* Hide desktop navigation list */
+    .navigation_list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: var(--header-height); /* Starts below the header */
+        right: 0;
+        width: 100%;
+        background-color: var(--bg-dark);
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        text-align: center;
+        padding: 2rem 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+
+    .navigation_list li {
+        display: block;
+        margin: 2rem 0;
+    }
+
+    /* JavaScript-driven class to show the menu */
+    .navigation_list.active {
+        display: flex;
+    }
 }

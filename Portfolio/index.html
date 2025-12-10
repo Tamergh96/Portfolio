@@ -1,54 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This is my personal Developer Portfolio" />
+    <title>Tamer Ghazi Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    </div>
-    <div class="div1">
-    <header>
-        <img src="./assets/Screenshot 2025-08-29 143906.png" alt="Picture of Tamer"><br><br>
-        <h1>Tamer Ghazi</h1>
-        <div class="text"> 
-        <h2> Software Developer. Who is trying to be better everyday</h2>
-
-    <p>Curious software developer with experience in web and application development.
-        Using modern technologies to keep learning and growing.
-        Motivated to turn new ideas into practical solutions. Excited about collaboration, knowledge sharing, and new projects.
-    </p>
+    <header class="portfolio_header">
+        <div class="header_text">
+            <a href="#home"><img class="img_nav" src="./assets/bg-Tg.png" alt="Logo"></a>
+        </div>
+        <i class="fa-solid fa-list responsive_navigation"></i>
+        <nav class="navigation">
+            <ul class="navigation_list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#aboutme">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="Deutsch.html">Deutsch</a></li>
+            </ul>
+        </nav>
     </header>
-    </div>
 
-    <!-- <section class="Contact">
-        <form>
-            <fieldset>
-            <legend>Contact me ! </legend>  
-            <label for="name">
-                Name:
-            </label>
-            <input type="text" name="name"/><br>
-            <label for="gender" name="gender">Gender:</label>
-            <input type="radio" name="Male" value="Male"">Male
-            <input type="radio" name="Male" value="Female">Female<br>
-            <textarea maxlength="10">Enter your message</textarea><br>
-            <button type="submit">Send Message</button>
-            </fieldset>
-        </form><br>
-    </section> -->
+    <main class="container">
+        <div class="content">
+            <div class="main_image">
+                <img src="./assets/Profilepicture.png" alt="Tamer Ghazi Web Developer professional headshot">
+            </div>
+            <div class="main_text">
+                <h1 class="main_title">
+                    Hello! My Name is Tamer &#128075; Experienced Developer with a Learner's Mindset.
+                </h1>
+                <h3>Full Stack Developer based in Hamburg &#128187;</h3>
+                <p class="main_paragraph">
+                    I bring 5 years of professional experience to the table, yet I believe the best developers never
+                    stop learning. I am deeply committed to mastering Full Stack technologies, constantly challenging
+                    myself to write cleaner code and build better solutions every day.
+                </p>
+                <div class="cta_buttons">
+                    <a href="#contact" class="btn primary_btn">Let's Connect</a>
+                    <a href="./assets/Lebenslauf_Ghazi.pdf" download class="btn secondary_btn">Download CV</a>
+                </div>
+            </div>
+        </div>
+        <section class="main_content" id="aboutme">
+            <div class="card experience">
+                <h3>Experience</h3>
+                <ul>
+                    <li><strong>2018:</strong> Bachelor in Computer Science</li>
+                    <li><strong>2019:</strong> Internship in Web Development</li>
+                    <li><strong>2019 - 2023:</strong> Full Stack Web Developer</li>
+                    <li><strong>2023 - 2025:</strong> Expert Application Software</li>
+                </ul>
+            </div>
 
-   <div class="socials">
-    <a href="mailto:tamerghazi@hotmail.com"/>Email me</a>
-    <a href="https://www.linkedin.com/in/tamerghazi">Linkedin</a>
-    <a href="https://www.xing.com/tamerghazi">Xing</a>
-    <a href="https://github.com/Tamergh96">Github</a>
-   </div>
+            <div class="card skills">
+                <h3>Technologies</h3>
+                <div class="icon-grid">
+                    <div class="tech-item">
+                        <i class="fa-brands fa-html5 icon"></i>
+                        <span>Html</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fa-brands fa-css3-alt icon"></i>
+                        <span>Css</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fa-brands fa-bootstrap icon"></i>
+                        <span>Bootstrap</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fa-brands fa-angular icon"></i>
+                        <span>Angular</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fa-brands fa-php icon"></i>
+                        <span>Php</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fa-brands fa-java icon"></i>
+                        <span>Java</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fa-brands fa-git icon"></i>
+                        <span>Git</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fa-solid fa-database icon"></i>
+                        <span>Database</span>
+                    </div>
+                </div>
+            </div>
 
-   <footer class="footer">
-    <p>&copy; 2025-Tamer Ghazi</p>
-   </footer>
+            <div class="card soft_skills">
+                <h3>Skillset & Soft Skills</h3>
+                <ul class="soft_skills_list">
+                    <li><i class="fa-solid fa-people-group"></i> <strong>Teamwork</strong></li>
+                    <li><i class="fa-solid fa-earth-americas"></i> <strong>Intercultural Competence</strong></li>
+                    <li><i class="fa-solid fa-comments"></i> <strong>Communication Skills</strong></li>
+                    <li><i class="fa-solid fa-graduation-cap"></i> <strong>Willingness to Learn</strong></li>
+                    <li><i class="fa-solid fa-shuffle"></i> <strong>Adaptability</strong></li>
+                </ul>
+            </div>
+        </section>
 
+        <section class="projects" id="projects">
+            <h2>My Projects</h2>
+            <div class="projects_photos">
+                
+                <div class="card project_1">
+                    <img src="./assets/project 1.png" alt="Screenshot of the first project, a modern web dashboard." />
+                    <div class="project_info">
+                        <h4>Project 1: E-commerce Dashboard</h4>
+                        <p>Client Analytics Dashboard. A responsive, clean-code front-end solution demonstrating advanced CSS layout (Grid/Flexbox) techniques</p>
+                        <div class="project_links">
+                            <a href="https://astounding-manatee.netlify.app/" target="_blank" class="btn primary_btn btn-small">View Live Demo</a>
+                            <a href="https://github.com/Tamergh96/Landing-Page" target="_blank" class="btn secondary_btn btn-small">GitHub</a>
+                        </div>
+                        <p class="tech_stack"><strong>Tech Stack:</strong> Html, Css</p>
+                    </div>
+                </div>
+                
+                <div class="card project_2">
+                    <img src="./assets/project 2.png" alt="Screenshot of the second project, a dark-themed application UI." />
+                    <div class="project_info">
+                        <h4>Project 2: Coffee Shop Website</h4>
+                        <p>Fully Responsive Coffee Shop Menu Interface. A clean, modern HTML and CSS design allowing users to easily browse all available menu items, prices, and daily specials. The layout is optimized for viewing on all devices.</p>
+                        <div class="project_links">
+                            <a href="[LINK ZUR LIVE DEMO]" target="_blank" class="btn primary_btn btn-small">View Live Demo</a>
+                            <a href="[LINK ZUM GITHUB REPO]" target="_blank" class="btn secondary_btn btn-small">GitHub</a>
+                        </div>
+                        <p class="tech_stack"><strong>Tech Stack:</strong> Html, Css</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2 class="contact_title">Get in touch</h2>
+            <div class="socialmedia_icons">
+                <a href="mailto:tamerghazi@hotmail.com"><i class="fa-solid fa-at icon contact_icon"></i></a>
+                <a href="https://www.linkedin.com/in/tamerghazi/"><i
+                        class="fa-brands fa-linkedin icon contact_icon"></i></a>
+                <a
+                    href="https://www.xing.com/profile/Tamer_Ghazi/web_profiles?nwt_nav=profile&expandNeffi=true"><i
+                        class="fa-brands fa-square-xing icon contact_icon"></i></a>
+                <a href="https://github.com/Tamergh96"><i class="fa-brands fa-github icon contact_icon"></i></a>
+                <a href="./assets/Lebenslauf_Ghazi.pdf" download class="cv_download"><i
+                        class="fa-solid fa-download icon contact_icon"></i></a>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer class="portfolio_footer">
+        <p>&copy; Tamer Ghazi - 2025</p>
+    </footer>
+
+    <script>
+        const burgerMenu = document.querySelector('.responsive_navigation');
+        const navList = document.querySelector('.navigation_list');
+
+        burgerMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.navigation_list li a').forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+            });
+        });
+    </script>
 </body>
+
 </html>
