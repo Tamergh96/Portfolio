@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This is my personal Developer Portfolio">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This is my personal Developer Portfolio" />
     <title>Tamer Ghazi Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -30,17 +30,24 @@
     <main class="container">
         <div class="content">
             <div class="main_image">
-                <img src="./assets/Profilepicture.png" alt="Tamer Ghazi Web Developer">
+                <img src="./assets/Profilepicture.png" alt="Tamer Ghazi Web Developer professional headshot">
             </div>
             <div class="main_text">
-                <h2 class="main_title">Hello! My Name is Tamer &#128075; Experienced Developer with a Learner's Mindset.</h2>
+                <h1 class="main_title">
+                    Hello! My Name is Tamer &#128075; Experienced Developer with a Learner's Mindset.
+                </h1>
                 <h3>Full Stack Developer based in Hamburg &#128187;</h3>
                 <p class="main_paragraph">
-                    I bring 5 years of professional experience to the table, yet I believe the best developers never stop learning.
-                    I am deeply committed to mastering Full Stack technologies, constantly challenging myself to write cleaner code and build better solutions every day.
+                    I bring 5 years of professional experience to the table, yet I believe the best developers never
+                    stop learning. I am deeply committed to mastering Full Stack technologies, constantly challenging
+                    myself to write cleaner code and build better solutions every day.
                 </p>
+                <div class="cta_buttons">
+                    <a href="#contact" class="btn primary_btn">Let's Connect</a>
+                    <a href="./assets/Lebenslauf_Ghazi.pdf" download class="btn secondary_btn">Download CV</a>
+                </div>
             </div>
-        </div> 
+        </div>
         <section class="main_content" id="aboutme">
             <div class="card experience">
                 <h3>Experience</h3>
@@ -55,14 +62,81 @@
             <div class="card skills">
                 <h3>Technologies</h3>
                 <div class="icon-grid">
-                    <i class="fa-brands fa-html5 icon"></i>
-                    <i class="fa-brands fa-css3-alt icon"></i>
-                    <i class="fa-brands fa-bootstrap icon"></i>
-                    <i class="fa-brands fa-angular icon"></i>
-                    <i class="fa-brands fa-php icon"></i>
-                    <i class="fa-brands fa-java icon"></i>
-                    <i class="fa-brands fa-git icon"></i>
-                    <i class="fa-solid fa-database icon"></i>
+                    <div class="tech-item">
+                        <i class="fa-brands fa-html5 icon"></i>
+                        <span>Html</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fa-brands fa-css3-alt icon"></i>
+                        <span>Css</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fa-brands fa-bootstrap icon"></i>
+                        <span>Bootstrap</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fa-brands fa-angular icon"></i>
+                        <span>Angular</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fa-brands fa-php icon"></i>
+                        <span>Php</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fa-brands fa-java icon"></i>
+                        <span>Java</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fa-brands fa-git icon"></i>
+                        <span>Git</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fa-solid fa-database icon"></i>
+                        <span>Database</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card soft_skills">
+                <h3>Skillset & Soft Skills</h3>
+                <ul class="soft_skills_list">
+                    <li><i class="fa-solid fa-people-group"></i> <strong>Teamwork</strong></li>
+                    <li><i class="fa-solid fa-earth-americas"></i> <strong>Intercultural Competence</strong></li>
+                    <li><i class="fa-solid fa-comments"></i> <strong>Communication Skills</strong></li>
+                    <li><i class="fa-solid fa-graduation-cap"></i> <strong>Willingness to Learn</strong></li>
+                    <li><i class="fa-solid fa-shuffle"></i> <strong>Adaptability</strong></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="projects" id="projects">
+            <h2>My Projects</h2>
+            <div class="projects_photos">
+                
+                <div class="card project_1">
+                    <img src="./assets/project 1.png" alt="Screenshot of the first project, a modern web dashboard." />
+                    <div class="project_info">
+                        <h4>Project 1: E-commerce Dashboard</h4>
+                        <p>Client Analytics Dashboard. A responsive, clean-code front-end solution demonstrating advanced CSS layout (Grid/Flexbox) techniques</p>
+                        <div class="project_links">
+                            <a href="https://astounding-manatee.netlify.app/" target="_blank" class="btn primary_btn btn-small">View Live Demo</a>
+                            <a href="https://github.com/Tamergh96/Landing-Page" target="_blank" class="btn secondary_btn btn-small">GitHub</a>
+                        </div>
+                        <p class="tech_stack"><strong>Tech Stack:</strong> Html, Css</p>
+                    </div>
+                </div>
+                
+                <div class="card project_2">
+                    <img src="./assets/project 2.png" alt="Screenshot of the second project, a dark-themed application UI." />
+                    <div class="project_info">
+                        <h4>Project 2: Coffee Shop Website</h4>
+                        <p>Fully Responsive Coffee Shop Menu Interface. A clean, modern HTML and CSS design allowing users to easily browse all available menu items, prices, and daily specials. The layout is optimized for viewing on all devices.</p>
+                        <div class="project_links">
+                            <a href="[LINK ZUR LIVE DEMO]" target="_blank" class="btn primary_btn btn-small">View Live Demo</a>
+                            <a href="https://github.com/Tamergh96/Coffee-House" target="_blank" class="btn secondary_btn btn-small">GitHub</a>
+                        </div>
+                        <p class="tech_stack"><strong>Tech Stack:</strong> Html, Css</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -71,12 +145,18 @@
             <h2 class="contact_title">Get in touch</h2>
             <div class="socialmedia_icons">
                 <a href="mailto:tamerghazi@hotmail.com"><i class="fa-solid fa-at icon contact_icon"></i></a>
-                <a href="https://www.linkedin.com/in/tamerghazi/"><i class="fa-brands fa-linkedin icon contact_icon"></i></a>
-                <a href="https://www.xing.com/profile/Tamer_Ghazi/web_profiles?nwt_nav=profile&expandNeffi=true"><i class="fa-brands fa-square-xing icon contact_icon"></i></a>
+                <a href="https://www.linkedin.com/in/tamerghazi/"><i
+                        class="fa-brands fa-linkedin icon contact_icon"></i></a>
+                <a
+                    href="https://www.xing.com/profile/Tamer_Ghazi/web_profiles?nwt_nav=profile&expandNeffi=true"><i
+                        class="fa-brands fa-square-xing icon contact_icon"></i></a>
                 <a href="https://github.com/Tamergh96"><i class="fa-brands fa-github icon contact_icon"></i></a>
-                <a href="./assets/Lebenslauf_Ghazi.pdf" download class="cv_download"><i class="fa-solid fa-download icon contact_icon"></i></a>
+                <a href="./assets/Lebenslauf_Ghazi.pdf" download class="cv_download"><i
+                        class="fa-solid fa-download icon contact_icon"></i></a>
             </div>
         </section>
+
+
     </main>
 
     <footer class="portfolio_footer">
